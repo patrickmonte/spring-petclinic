@@ -1,0 +1,3 @@
+## 2026-09-16 - Missing aria-hidden on Thymeleaf dynamically inserted icons
+**Learning:** Found a pattern where dynamically inserted Font Awesome icons inside Thymeleaf fragments (like `menuItem`) were missing `aria-hidden="true"`, causing screen readers to incorrectly read out unicode characters for those icons. While some individual static icon tags had this attribute, the fragment used throughout the layout was missing it.
+**Action:** Always ensure that icon elements inside reusable view fragments (like Thymeleaf or React components) have `aria-hidden="true"` so that the accessibility fix is inherited everywhere the fragment is used.
